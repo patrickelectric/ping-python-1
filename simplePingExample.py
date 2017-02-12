@@ -3,6 +3,14 @@
 from Ping import Ping1D
 import sys
 import getopt
+from dronekit import connect
+import time
+import csv
+
+address = 'localhost'
+port = 9000
+
+vehicle = connect('udpout:'+address+':'+str(port),wait_ready=False)
 
 device = ''
 instructions = "Usage: python simplePingExample.py -d <device_name>"
@@ -10,10 +18,12 @@ instructions = "Usage: python simplePingExample.py -d <device_name>"
 ##Parse Command line options
 ############################
 try:
-    options, remainder = getopt.getopt(sys.argv[1:],"hd:",["help", "device="])
+    options, remainder = getopt.getopt(sys.argv[1:],"hd:f:",["help", "device=", "file="])
 except:
     print(instructions)
     exit(1)
+
+file = ''
 
 for opt, arg in options:
     if opt in ('-h', '--help'):
@@ -22,21 +32,36 @@ for opt, arg in options:
     elif opt in ('-d', '--device'):
         if (arg != ''):
             device = arg
+    elif opt in ('-f', '--file'):
+	if (arg != ''):
+	    file = arg
     else:
         print(instructions)
         exit(1)
+
+if (file is ''):
+    file = "/home/pi/sonar-logs/sonar-"+time.strftime("%Y-%m-%d-%H-%M-%S")+".csv"
+
+fout = open(str(file),'wb')
+writer = csv.writer(fout,delimiter=',')
 
 #Make a new Ping
 myPing = Ping1D(device)
 print()
 print("------------------------------------")
-print("Starting Ping..")
-print("Press CTRL+Z to exit")
+print("Starting Sonar/GPS Log")
 print("------------------------------------")
 
-raw_input("Press Enter to continue...")
-
 #Read and print distance measurements with confidence
+writer.writerow(["distance","confidence","lat","lon"])
+fout.close()
+
 while True:
     myPing.updateSonar()
-    print("Current Distance: " + str(myPing.getDistance()) + " | Confidence: " + str(myPing.getConfidence()))
+    print("Current Distance: " + str(myPing.getDistance()) + " | Confidence: " + str(myPing.getConfidence()) + " | Lat: " + str(vehicle.location.global_frame.lat) + " | Lon: " + str(vehicle.location.global_frame.lon))
+    fout = open(str(file),'a')
+    writer = csv.writer(fout,delimiter=',')
+    writer.writerow([str(myPing.getDistance()),str(myPing.getConfidence()),str(vehicle.location.global_frame.lat),str(vehicle.location.global_frame.lon)])
+    fout.close()
+    time.sleep(1.0)
+
