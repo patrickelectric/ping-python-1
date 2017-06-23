@@ -17,9 +17,6 @@ class Message:
         )
         return representation
 
-def foo_action(ping,msg):
-    pass
-
 #General Messages
 gen_goto_bootloader = Message(
     100,
