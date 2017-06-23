@@ -54,6 +54,8 @@ class Ping1D:
     state      = GET_START
 
     def __init__(self, deviceName):
+        if deviceName is None:
+            return
         #Open the serial port
         if (deviceName == ''):
             print(self.instructions)
