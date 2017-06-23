@@ -2,7 +2,7 @@
 #Messages.py
 
 class Message:
-    def __init__(self, id, name, format = None, payload_fields=(), action = None):
+    def __init__(self, id, name, format = '', payload_fields=(), action = None):
         self.id = id
         self.name = name
         self.format = format
@@ -23,7 +23,7 @@ def foo_action(ping,msg):
 #General Messages
 gen_goto_bootloader = Message(
     100,
-    'gen_version'
+    'gen_goto_bootloader'
 )
 
 gen_version = Message(
