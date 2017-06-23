@@ -1,9 +1,8 @@
 #!/usr/bin/python -u
 #simplePingExample.py
-from Ping import Ping1D
+from Ping import Ping
 import sys
 import getopt
-import Message
 
 device = ''
 instructions = "Usage: python simplePingExample.py -d <device_name>"
@@ -28,7 +27,7 @@ for opt, arg in options:
         exit(1)
 
 #Make a new Ping
-myPing = Ping1D(device)
+myPing = Ping.Ping1D(device)
 if myPing.initialize() is False:
     print "Failed to initialize Ping!"
     exit(1)
