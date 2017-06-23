@@ -46,6 +46,13 @@ class Ping1D:
     test_1 = ''
     test_2 = ''
 
+    #Parse State
+    GET_START  = 0
+    GET_HEADER = 1
+    GET_BODY   = 2
+    GET_CRC    = 3
+    state      = GET_START
+
     def __init__(self, deviceName):
         #Open the serial port
         if (deviceName == ''):
@@ -90,6 +97,87 @@ class Ping1D:
             else:
                 setattr(self, attr, payload[i])
 
+    # Parse a buffer one byte at a time
+    # Returns None if a message has not been decoded on this byte
+    # Returns (message ID, message payload) if a message has been decoded on this byte
+    def parseByte(self, byte):
+        if self.state == self.GET_START:
+            self.headerRaw = ""
+            self.payloadRaw = ""
+            self.checksumRaw = ""
+
+            #Put new byte in second index
+            self.test_2 = byte
+
+            #Check if start signal
+            if((self.test_1 == self.validation_1) and (self.test_2 == self.validation_2)):
+                #Add start signal to buffer, since we have a valid message
+                self.headerRaw += struct.pack('<c', self.validation_1)
+                self.headerRaw += struct.pack('<c', self.validation_2)
+
+                self.headerRemaining = 6
+
+                self.state = self.GET_HEADER
+            else:
+                #Move second byte to first byte
+                self.test_1 = self.test_2
+
+        elif self.state == self.GET_HEADER:
+            #Get the header
+            self.headerRaw += struct.pack("<c", byte)
+            self.headerRemaining -= 1
+
+            if self.headerRemaining == 0:
+                #Decode Header
+                header = struct.unpack(self.msg_header, self.headerRaw)
+
+                #Look at header metadata
+                self.payloadLength = header[2]
+                self.messageID     = header[3]
+                self.sourceID      = header[4]
+                self.destinationID = header[5]
+
+                self.messageForHost = False
+
+                if(self.destinationID != 0):
+                    self.messageForHost = False
+                else:
+                    self.messageForHost = True
+
+                self.payloadRemaining = self.payloadLength
+                self.state = self.GET_BODY
+
+        elif self.state == self.GET_BODY:
+            #Get the message body
+            self.payloadRaw += struct.pack("<c", byte)
+            self.payloadRemaining -= 1
+
+            if self.payloadRemaining == 0:
+                self.crcRemaining = 2
+                self.state = self.GET_CRC
+
+        elif self.state == self.GET_CRC:
+            #Get the Checksum
+            self.checksumRaw += struct.pack("<c", byte)
+            self.crcRemaining -= 1
+
+            if self.crcRemaining == 0:
+
+                self.state = self.GET_START
+                #Ignore message if it was not directed at the host
+                if (not self.messageForHost):
+                    return None
+
+                #Decode the checksum
+                checksum = struct.unpack(self.msg_checksum, self.checksumRaw)[0]
+                checksumMatch = self.evaluateChecksum(self.headerRaw, self.payloadRaw, checksum)
+
+                #Return None if there is a checksum error
+                if (not checksumMatch):
+                    print("Checksum mismatch!")
+                    return None
+
+                return (self.messageID, self.payloadRaw)
 
     def readSonar(self):
         tStart = time.time()
