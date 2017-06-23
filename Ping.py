@@ -439,7 +439,7 @@ class Ping1D:
     #Pack the payload so it can be sent
     def packPayload(self, payloadFormat, payloadRaw):
         if (payloadRaw == []):
-            return
+            return []
         payloadPacked = struct.pack(payloadFormat, *payloadRaw)
         return payloadPacked
 
@@ -447,8 +447,11 @@ class Ping1D:
     #Returns true if checksum match
     def evaluateChecksum(self, h, p, c):
         hUnpacked = struct.unpack("<BBBBBBBB", h)
-        pFormat = '<' + (len(p) * 'B')
-        pUnpacked = struct.unpack(pFormat, p)
+        if len(p) > 0:
+            pFormat = '<' + (len(p) * 'B')
+            pUnpacked = struct.unpack(pFormat, p)
+        else:
+            pUnpacked = ()
 
         sumOfBytes = 0
         for i in range(0, len(h)):
@@ -462,8 +465,13 @@ class Ping1D:
     #Checksum = sum(0 -> n) & 0xffff
     def buildChecksum(self, h, p):
         hUnpacked = struct.unpack("<BBBBBBBB", h)
+        if p is None:
+            p = ()
         pFormat = '<' + (len(p) * 'B')
-        pUnpacked = struct.unpack(pFormat, p)
+        try:
+            pUnpacked = struct.unpack(pFormat, p)
+        except:
+            pUnpacked = ()
 
         hSize = len(h)
         pSize = len(p)
