@@ -88,9 +88,13 @@ class Ping1D:
     def handleMessage(self, sonarData):
         messageID = sonarData[0]
         payloadPacked = sonarData[1]
-
-        new_message = self.messages[messageID]
-        payload = struct.unpack(new_message.format, payloadPacked)
+        
+        try:
+            new_message = self.messages[messageID]
+            payload = struct.unpack(new_message.format, payloadPacked)
+        except KeyError:
+            print "Unrecognized message id:", messageID
+            return
 
         for i,attr in enumerate(new_message.payload_fields):
             #Have to have a separate handling for lists / arrays
