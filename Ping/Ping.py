@@ -53,7 +53,7 @@ class Ping1D:
     GET_CRC    = 3
     state      = GET_START
 
-    def __init__(self, deviceName):
+    def __init__(self, deviceName, baudrate=115200):
         if deviceName is None:
             return
         #Open the serial port
@@ -61,9 +61,11 @@ class Ping1D:
             print(self.instructions)
             exit(1)
         try:
-            self.ser = serial.Serial(deviceName, 115200)
+            print("Opening %s at %d bps") % (deviceName, baudrate)
+            self.ser = serial.Serial(deviceName, baudrate)
             self.ser.timeout = 1
-        except:
+        except Exception as e:
+            print e
             print("Failed to open the given serial port")
             exit(1)
 
