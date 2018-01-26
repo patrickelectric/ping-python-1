@@ -19,7 +19,7 @@ class Message:
 
 #General Messages
 gen_goto_bootloader = Message(
-    100,
+    0x109,
     'gen_goto_bootloader'
 )
 
