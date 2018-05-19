@@ -4,6 +4,7 @@
 
 from Ping import Ping
 import argparse
+import time
 
 ##Parse Command line options
 ############################
@@ -30,3 +31,4 @@ raw_input("Press Enter to continue...")
 while True:
     myPing.getDistanceData()
     print("Distance: " + str(myPing.distance) + " Confidence: " + str(myPing.confidence))
+    time.sleep(0.1)

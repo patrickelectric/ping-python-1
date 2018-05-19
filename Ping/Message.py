@@ -7,7 +7,6 @@ class Message:
         self.name = name
         self.format = format
         self.payload_fields = payload_fields
-
     def __repr__(self):
         representation = (
             'ID: ' + str(self.id) + '\n' +
@@ -21,6 +20,7 @@ ping1D_empty = Message(
     0,
     'empty',
 )
+
 ping1D_undefined = Message(
     0,
     'undefined',
@@ -222,7 +222,7 @@ ping1D_distance_simple = Message(
 ping1D_distance = Message(
     1212,
     'distance',
-    '<LBHLLLL',
+    '<LHHLLLL',
     (
         'distance',
         'confidence',
@@ -325,70 +325,3 @@ ping1D_continuous_stop = Message(
     'continuous_stop',
 )
 
-
-es_distance = Message(
-    1101,
-    'es_distance',
-    '<IBH4I',
-    (
-        'distance',
-        'confidence',
-        'pulse_usec',
-        'ping_number',
-        'start_mm',
-        'length_mm',
-        'gain_index'
-    )
-)
-
-es_profile = Message(
-    1102,
-    'es_profile',
-    '<IBH4IH200B',
-    (
-        'distance',
-        'confidence',
-        'pulse_usec',
-        'ping_number',
-        'start_mm',
-        'length_mm',
-        'gain_index',
-        'num_points',
-        'points'
-    )
-)
-
-es_range = Message(
-    1110,
-    'es_range',
-    '<II',
-    ('start_mm','length_mm')
-)
-
-es_mode = Message(
-    1111,
-    'es_mode',
-    '<B',
-    ('auto_manual',)
-)
-
-es_rate = Message(
-    1112,
-    'es_rage',
-    '<H',
-    ('msec_per_ping',)
-)
-
-es_gain = Message(
-    1113,
-    'es_gain',
-    '<I',
-    ('gain_index',)
-)
-
-es_pulse = Message(
-    1114,
-    'es_pulse',
-    '<H',
-    ('pulse_usec',)
-)
