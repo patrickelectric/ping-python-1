@@ -70,11 +70,11 @@ class Ping1D:
             exit(1)
 
     def initialize(self):
-        if self.update(Message.gen_device_id) is None:
+        if self.update(Message.ping1D_device_id) is None:
             return False
-        if self.update(Message.gen_version) is None:
+        if self.update(Message.ping1D_fw_version) is None:
             return False
-        if self.update(Message.gen_voltage) is None:
+        if self.update(Message.ping1D_voltage_5) is None:
             return False
         return True
 
@@ -93,7 +93,11 @@ class Ping1D:
         
         try:
             new_message = self.messages[messageID]
-            payload = struct.unpack(new_message.format, payloadPacked)
+            print new_message
+            print payloadPacked
+            print len(payloadPacked)
+            if new_message.format:
+                payload = struct.unpack(new_message.format, payloadPacked)
         except KeyError:
             print "Unrecognized message id:", messageID
             return
@@ -187,6 +191,9 @@ class Ping1D:
 
                 return (self.messageID, self.payloadRaw)
 
+    # this should probably not return anything but bytes crunched, replace with parseByte
+    # read/process any waiting rx data
+    # This returns a tuple (msgId, payload buffer)
     def readSonar(self):
         tStart = time.time()
 
@@ -277,7 +284,7 @@ class Ping1D:
                 print("Checksum mismatch!")
                 return None
 
-            return (messageID, payloadRaw)
+            return (messageID, payloadRaw) #this is not very useful
 
         except Exception as e:
             print "Error: "+str(e)
@@ -286,11 +293,15 @@ class Ping1D:
 
     #Request the given message ID
     def request(self, m_id):
-        payloadData = [m_id]
-        self.sendMessage(Message.gen_cmd_request, payloadData, self.device_id)
+        msg = Message.ping1D_empty
+        msg.id = m_id
+        self.sendMessage(msg, [], self.device_id)
 
     #Used for sending of all messages
+    #in: message object, payload, destination device id
+    # this has no support for messages without payloads?
     def sendMessage(self, m_message, m_payload, m_destination):
+
         #Pack payload first, because metadata is required for the header
         finalPayload = self.packPayload(m_message.format, m_payload)
 
@@ -302,7 +313,7 @@ class Ping1D:
         finalHeader = self.packHeader(header)
 
         #Create Checksum
-        checksum = self.buildChecksum(finalHeader, finalPayload)
+        checksum = self.buildChecksum(finalHeader, finalPayload) # these things should really not be methods of ping class
         finalChecksum = self.packChecksum(checksum)
 
         #Send it!
@@ -313,9 +324,10 @@ class Ping1D:
     #Accessor Methods
     ################
 
+    # why don't we use these methods in the initialization?
     #Returns a string of the version number
     def getVersion(self):
-        self.update(Message.gen_version)
+        self.update(Message.ping1D_fw_version)
         data = {
             'device_type':self.device_type,
             'device_model': self.device_model,
@@ -326,15 +338,15 @@ class Ping1D:
         return data
 
     def getDeviceID(self):
-        self.update(Message.gen_device_id)
+        self.update(Message.ping1D_device_id)
         return self.device_id
 
     def getVoltage(self):
-        self.update(Message.gen_voltage)
+        self.update(Message.ping1D_voltage_5)
         return self.voltage
 
     def getSimpleDistanceData(self):
-        self.update(Message.es_distance_simple)
+        self.update(Message.ping1D_distance_simple)
         data = {
             'distance': self.distance,
             'confidence': self.confidence
@@ -343,7 +355,7 @@ class Ping1D:
 
 
     def getDistanceData(self):
-        self.update(Message.es_distance)
+        self.update(Message.ping1D_distance)
         data = {
                 'distance': self.distance,
                 'confidence': self.confidence,
@@ -356,7 +368,7 @@ class Ping1D:
         return data
 
     def getProfile(self):
-        self.update(Message.es_profile)
+        self.update(Message.ping1D_profile)
         data = {
                 'distance': self.distance,
                 'confidence': self.confidence,
@@ -371,7 +383,7 @@ class Ping1D:
         return data
 
     def getRange(self):
-        self.update(Message.es_range)
+        self.update(Message.ping1D_range)
         data = {
             'start_mm':self.start_mm,
             'length_mm': self.length_mm
@@ -379,19 +391,19 @@ class Ping1D:
         return data
 
     def getMode(self):
-        self.update(Message.es_mode)
+        self.update(Message.ping1D_mode)
         return self.auto_manual
 
     def getRate(self):
-        self.update(Message.es_rate)
+        self.update(Message.ping1D_ping_rate_msec)
         return self.pulse_usec
 
     def getGain(self):
-        self.update(Message.es_gain)
+        self.update(Message.ping1D_gain)
         return self.gain_index
 
     def getPulseLength(self):
-        self.update(Message.es_pulse)
+        self.update(Message.ping1D_pulse_usec)
         return self.pulse_usec
 
     #Control Methods
@@ -413,7 +425,7 @@ class Ping1D:
         self.sendMessage(Message.es_mode, payload, self.device_id)
 
     def setRate(self, rate):
-        payload = [rate]
+        payload = [rate] # much better to delcare message object first, then set the **correctly named** field
         self.sendMessage[Message.es_rate, payload, self.device_id]
 
     def setGain(self, gain):
@@ -426,6 +438,8 @@ class Ping1D:
 
     #Internal
     #########
+
+    #most of this stuff belongs in message.py
 
     #This will create a CRC of the message and check it against the sent one
     def validateChecksum(self, message, claimedChecksum):
@@ -451,6 +465,8 @@ class Ping1D:
 
     #Checksum = sum(0 -> n) & 0xffff
     #Returns true if checksum match
+    ## This belongs in Message.py?
+
     def evaluateChecksum(self, h, p, c):
         hUnpacked = struct.unpack("<BBBBBBBB", h)
         if len(p) > 0:
@@ -469,6 +485,8 @@ class Ping1D:
         return checksum == c
 
     #Checksum = sum(0 -> n) & 0xffff
+    ## This belongs in Message.py?
+
     def buildChecksum(self, h, p):
         hUnpacked = struct.unpack("<BBBBBBBB", h)
         if p is None:
@@ -494,25 +512,43 @@ class Ping1D:
         return struct.pack(self.msg_checksum, c)
 
     #Metadata Format
+    ## This belongs in Message.py?
     msg_header   = '<ccHHBB'
     msg_checksum = '<H'
 
+    # do we need this, really? seems contrived
     #Message Dictionary
     messages = {
-        Message.gen_goto_bootloader.id: Message.gen_goto_bootloader,
-        Message.gen_version.id: Message.gen_version,
-        Message.gen_reset.id: Message.gen_reset,
-        Message.gen_device_id.id: Message.gen_device_id,
-        Message.gen_new_data.id: Message.gen_new_data,
-        Message.gen_cmd_request.id: Message.gen_cmd_request,
-        Message.gen_voltage.id: Message.gen_voltage,
-        Message.sonar_velocity.id: Message.sonar_velocity,
-        Message.es_distance_simple.id: Message.es_distance_simple,
-        Message.es_distance.id: Message.es_distance,
-        Message.es_profile.id: Message.es_profile,
-        Message.es_range.id: Message.es_range,
-        Message.es_mode.id: Message.es_mode,
-        Message.es_rate.id: Message.es_rate,
-        Message.es_gain.id: Message.es_gain,
-        Message.es_pulse.id: Message.es_pulse
+        Message.ping1D_undefined.id: Message.ping1D_undefined,
+        Message.ping1D_ack.id: Message.ping1D_ack,
+        Message.ping1D_nack.id: Message.ping1D_nack,
+        Message.ping1D_ascii_text.id: Message.ping1D_ascii_text,
+        Message.ping1D_set_device_id.id: Message.ping1D_set_device_id,
+        Message.ping1D_set_range.id: Message.ping1D_set_range,
+        Message.ping1D_set_speed_of_sound.id: Message.ping1D_set_speed_of_sound,
+        Message.ping1D_set_auto_manual.id: Message.ping1D_set_auto_manual,
+        Message.ping1D_set_ping_rate_msec.id: Message.ping1D_set_ping_rate_msec,
+        Message.ping1D_set_gain_index.id: Message.ping1D_set_gain_index,
+        Message.ping1D_set_ping_enable.id: Message.ping1D_set_ping_enable,
+        Message.ping1D_goto_bootloader.id: Message.ping1D_goto_bootloader,
+        Message.ping1D_fw_version.id: Message.ping1D_fw_version,
+        Message.ping1D_device_id.id: Message.ping1D_device_id,
+        Message.ping1D_voltage_5.id: Message.ping1D_voltage_5,
+        Message.ping1D_speed_of_sound.id: Message.ping1D_speed_of_sound,
+        Message.ping1D_range.id: Message.ping1D_range,
+        Message.ping1D_mode.id: Message.ping1D_mode,
+        Message.ping1D_ping_rate_msec.id: Message.ping1D_ping_rate_msec,
+        Message.ping1D_gain_index.id: Message.ping1D_gain_index,
+        Message.ping1D_pulse_usec.id: Message.ping1D_pulse_usec,
+        Message.ping1D_background_data.id: Message.ping1D_background_data,
+        Message.ping1D_general_info.id: Message.ping1D_general_info,
+        Message.ping1D_distance_simple.id: Message.ping1D_distance_simple,
+        Message.ping1D_distance.id: Message.ping1D_distance,
+        Message.ping1D_processor_temperature.id: Message.ping1D_processor_temperature,
+        Message.ping1D_pcb_temperature.id: Message.ping1D_pcb_temperature,
+        Message.ping1D_profile.id: Message.ping1D_profile,
+        Message.ping1D_full_profile.id: Message.ping1D_full_profile,
+        Message.ping1D_raw_data.id: Message.ping1D_raw_data,
+        Message.ping1D_continuous_start.id: Message.ping1D_continuous_start,
+        Message.ping1D_continuous_stop.id: Message.ping1D_continuous_stop,
     }
