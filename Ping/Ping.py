@@ -157,7 +157,12 @@ class Ping1D:
                     self.messageForHost = True
 
                 self.payloadRemaining = self.payloadLength
-                self.state = self.GET_BODY
+
+                if self.payloadRemaining == 0:
+                    self.crcRemaining = 2
+                    self.state = self.GET_CRC
+                else:
+                    self.state = self.GET_BODY
 
         elif self.state == self.GET_BODY:
             #Get the message body
