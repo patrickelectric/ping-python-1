@@ -551,6 +551,10 @@ if __name__ == "__main__":
     print("  " + str(result))
     print("  > > pass: %s < <" % (result != None))
 
+    print("\n\n\n")
+    print(p)
+    print("\n\n\n")
+
     print("\ntesting set_device_id")
     print("  > > pass: %s < <" % p.set_device_id(43))
     print("\ntesting set_range")
@@ -567,5 +571,5 @@ if __name__ == "__main__":
     # Not implemented
     # print("testing set_ping_enable")
     # print("  > > pass: %s < <" % p.set_ping_enable(0))
-
+    print("\n\n\n")
     print(p)
