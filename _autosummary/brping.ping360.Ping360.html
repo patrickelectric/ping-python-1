@@ -35,6 +35,7 @@
           
           <a href="../index.html" class="icon icon-home">
             ping-python
+              <img src="../_static/ping.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -104,77 +105,77 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.__init__" title="brping.ping360.Ping360.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_serial</span></code>(device_name[, baudrate])</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.connect_serial" title="brping.ping360.Ping360.connect_serial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_serial</span></code></a>(device_name[, baudrate])</p></td>
+<td><p>Do the connection via an serial link</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_udp</span></code>([host, port])</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.connect_udp" title="brping.ping360.Ping360.connect_udp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_udp</span></code></a>([host, port])</p></td>
+<td><p>Do the connection via an UDP link.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">control_auto_transmit</span></code>(mode, gain_setting, ...)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.control_auto_transmit" title="brping.ping360.Ping360.control_auto_transmit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">control_auto_transmit</span></code></a>(mode, gain_setting, ...)</p></td>
+<td><p>Send a control command (auto_transmit) to the device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">control_motor_off</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.control_motor_off" title="brping.ping360.Ping360.control_motor_off"><code class="xref py py-obj docutils literal notranslate"><span class="pre">control_motor_off</span></code></a>()</p></td>
+<td><p>Send a control command (motor_off) to the device.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">control_reset</span></code>(bootloader, reserved)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.control_reset" title="brping.ping360.Ping360.control_reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">control_reset</span></code></a>(bootloader, reserved)</p></td>
+<td><p>Send a control command (reset) to the device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">control_transducer</span></code>(mode, gain_setting, ...)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.control_transducer" title="brping.ping360.Ping360.control_transducer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">control_transducer</span></code></a>(mode, gain_setting, ...)</p></td>
+<td><p>Send a control command (transducer) to the device.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">device_id</span></code>(id, reserved[, verify])</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.device_id" title="brping.ping360.Ping360.device_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">device_id</span></code></a>(id, reserved[, verify])</p></td>
+<td><p>Send a device_id message to the device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_auto_device_data</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.get_auto_device_data" title="brping.ping360.Ping360.get_auto_device_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_auto_device_data</span></code></a>()</p></td>
+<td><p>Get a auto_device_data message from the device.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_device_data</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.get_device_data" title="brping.ping360.Ping360.get_device_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_device_data</span></code></a>()</p></td>
+<td><p>Get a device_data message from the device.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_device_information</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.get_device_information" title="brping.ping360.Ping360.get_device_information"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_device_information</span></code></a>()</p></td>
+<td><p>Get a device_information message from the device</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_protocol_version</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.get_protocol_version" title="brping.ping360.Ping360.get_protocol_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_protocol_version</span></code></a>()</p></td>
+<td><p>Get a protocol_version message from the device</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_message</span></code>(msg)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.handle_message" title="brping.ping360.Ping360.handle_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_message</span></code></a>(msg)</p></td>
+<td><p>Handle an incoming message from the device.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.initialize" title="brping.ping360.Ping360.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize</span></code></a>()</p></td>
+<td><p>Make sure there is a device on and read some initial data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.read" title="brping.ping360.Ping360.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>()</p></td>
+<td><p>Consume rx buffer data until a new message is successfully decoded.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">readDeviceInformation</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_io</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.read_io" title="brping.ping360.Ping360.read_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_io</span></code></a>()</p></td>
+<td><p>Read available data from the io device</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">request</span></code>(m_id[, timeout])</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.request" title="brping.ping360.Ping360.request"><code class="xref py py-obj docutils literal notranslate"><span class="pre">request</span></code></a>(m_id[, timeout])</p></td>
+<td><p>Request the given message ID.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_angle</span></code>(angle)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.set_angle" title="brping.ping360.Ping360.set_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_angle</span></code></a>(angle)</p></td>
+<td><p>Set the angle of the transducer.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gain_setting</span></code>(gain_setting)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.set_gain_setting" title="brping.ping360.Ping360.set_gain_setting"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gain_setting</span></code></a>(gain_setting)</p></td>
+<td><p>Set the gain_setting of the transducer.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mode</span></code>(mode)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.set_mode" title="brping.ping360.Ping360.set_mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mode</span></code></a>(mode)</p></td>
+<td><p>Set the mode of the transducer.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_number_of_samples</span></code>(number_of_samples)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.set_number_of_samples" title="brping.ping360.Ping360.set_number_of_samples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_number_of_samples</span></code></a>(number_of_samples)</p></td>
+<td><p>Set the number_of_samples of the transducer.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_sample_period</span></code>(sample_period)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.set_sample_period" title="brping.ping360.Ping360.set_sample_period"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_sample_period</span></code></a>(sample_period)</p></td>
+<td><p>Set the sample_period of the transducer.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_transmit_duration</span></code>(transmit_duration)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.set_transmit_duration" title="brping.ping360.Ping360.set_transmit_duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_transmit_duration</span></code></a>(transmit_duration)</p></td>
+<td><p>Set the transmit_duration of the transducer.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_transmit_frequency</span></code>(transmit_frequency)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.set_transmit_frequency" title="brping.ping360.Ping360.set_transmit_frequency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_transmit_frequency</span></code></a>(transmit_frequency)</p></td>
+<td><p>Set the transmit_frequency of the transducer.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transmit</span></code>()</p></td>
 <td><p></p></td>
@@ -182,14 +183,530 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transmitAngle</span></code>(angle)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">wait_message</span></code>(message_ids[, timeout])</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping360.Ping360.wait_message" title="brping.ping360.Ping360.wait_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wait_message</span></code></a>(message_id[, timeout])</p></td>
+<td><p>Wait until we receive a message from the device with the desired message_id for timeout seconds.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code>(data)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping360.Ping360.write" title="brping.ping360.Ping360.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(data)</p></td>
+<td><p>Write data to device.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.connect_serial">
+<span class="sig-name descname"><span class="pre">connect_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">115200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.connect_serial" title="Link to this definition"></a></dt>
+<dd><p>Do the connection via an serial link</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device_name</strong> (<em>str</em>) – Serial device name. E.g: /dev/ttyUSB0 or COM5</p></li>
+<li><p><strong>baudrate</strong> (<em>int</em>) – Connection baudrate used in the serial communication, defaults to 115200</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – Failed to open the given serial port</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.connect_udp">
+<span class="sig-name descname"><span class="pre">connect_udp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12345</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.connect_udp" title="Link to this definition"></a></dt>
+<dd><p>Do the connection via an UDP link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – UDP server address (IPv4) or name. Defaults to None.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – Port used to connect with the server. Defaults to 12345.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.control_auto_transmit">
+<span class="sig-name descname"><span class="pre">control_auto_transmit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain_setting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transmit_duration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transmit_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.control_auto_transmit" title="Link to this definition"></a></dt>
+<dd><p>Send a control command (auto_transmit) to the device.</p>
+<blockquote>
+<div><p>Message description:</p>
+</div></blockquote>
+<p>Extended <em>transducer</em> message with auto-scan function. The sonar will automatically scan the region between start_angle and end_angle and send auto_device_data messages as soon as new data is available. Send a line break to stop scanning (and also begin the autobaudrate procedure). Alternatively, a motor_off message may be sent (but retrys might be necessary on the half-duplex RS485 interface).</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param mode<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Operating mode (1 for Ping360)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.control_motor_off">
+<span class="sig-name descname"><span class="pre">control_motor_off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.control_motor_off" title="Link to this definition"></a></dt>
+<dd><p>Send a control command (motor_off) to the device.</p>
+<blockquote>
+<div><p>Message description:</p>
+</div></blockquote>
+<p>The sonar switches the current through the stepper motor windings off to save power. The sonar will send an ack message in response. The command timeout should be set to 50 msec. If the sonar is idle (not scanning) for more than 30 seconds then the motor current will automatically turn off. When the user sends any command that involves moving the transducer then the motor current is automatically re-enabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.control_reset">
+<span class="sig-name descname"><span class="pre">control_reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bootloader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserved</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.control_reset" title="Link to this definition"></a></dt>
+<dd><p>Send a control command (reset) to the device.</p>
+<blockquote>
+<div><p>Message description:</p>
+</div></blockquote>
+<p>Reset the sonar. The bootloader may run depending on the selection according to the <cite>bootloader</cite> payload field. When the bootloader runs, the external LED flashes at 5Hz. If the bootloader is not contacted within 5 seconds, it will run the current program. If there is no program, then the bootloader will wait forever for a connection. Note that if you issue a reset then you will have to close all your open comm ports and go back to issuing either a discovery message for UDP or go through the break sequence for serial comms before you can talk to the sonar again.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param bootloader<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0 = skip bootloader; 1 = run bootloader</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.control_transducer">
+<span class="sig-name descname"><span class="pre">control_transducer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain_setting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transmit_duration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transmit_frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transmit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserved</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.control_transducer" title="Link to this definition"></a></dt>
+<dd><p>Send a control command (transducer) to the device.</p>
+<blockquote>
+<div><p>Message description:</p>
+</div></blockquote>
+<p>The transducer will apply the commanded settings. The sonar will reply with a <cite>ping360_data</cite> message. If the <cite>transmit</cite> field is 0, the sonar will not transmit after locating the transducer, and the <cite>data</cite> field in the <cite>ping360_data</cite> message reply will be empty. If the <cite>transmit</cite> field is 1, the sonar will make an acoustic transmission after locating the transducer, and the resulting data will be uploaded in the <cite>data</cite> field of the <cite>ping360_data</cite> message reply. To allow for the worst case reponse time the command timeout should be set to 4000 msec.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param mode<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Operating mode (1 for Ping360)</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.device_id">
+<span class="sig-name descname"><span class="pre">device_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserved</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.device_id" title="Link to this definition"></a></dt>
+<dd><p>Send a device_id message to the device.</p>
+<p>Message description:</p>
+<p>Change the device id</p>
+<p>Send the message to write the device parameters, then read the values back from the device.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param id<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Device ID (1-254). 0 and 255 are reserved.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if successful communication with the device (and verification if verify is True), False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.get_auto_device_data">
+<span class="sig-name descname"><span class="pre">get_auto_device_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.get_auto_device_data" title="Link to this definition"></a></dt>
+<dd><p>Get a auto_device_data message from the device.
+Message description:
+Extended version of <em>device_data</em> with <em>auto_transmit</em> information. The sensor emits this message when in <em>auto_transmit</em> mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>mode: Operating mode (1 for Ping360)</p></li>
+<li><p>gain_setting: Analog gain setting (0 = low, 1 = normal, 2 = high)</p></li>
+<li><p>angle: Head angle (Units: gradian)</p></li>
+<li><p>transmit_duration: Acoustic transmission duration (1~1000 microseconds) (Units: microsecond)</p></li>
+<li><p>sample_period: Time interval between individual signal intensity samples in 25nsec increments (80 to 40000 == 2 microseconds to 1000 microseconds)</p></li>
+<li><p>transmit_frequency: Acoustic operating frequency. Frequency range is 500kHz to 1000kHz, however it is only practical to use say 650kHz to 850kHz due to the narrow bandwidth of the acoustic receiver. (Units: kHz)</p></li>
+<li><p>start_angle: Head angle to begin scan sector for autoscan in gradians (0~399 = 0~360 degrees). (Units: gradian)</p></li>
+<li><p>stop_angle: Head angle to end scan sector for autoscan in gradians (0~399 = 0~360 degrees). (Units: gradian)</p></li>
+<li><p>num_steps: Number of 0.9 degree motor steps between pings for auto scan (1~10 = 0.9~9.0 degrees) (Units: gradian)</p></li>
+<li><p>delay: An additional delay between successive transmit pulses (0~100 ms). This may be necessary for some programs to avoid collisions on the RS485 USRT. (Units: millisecond)</p></li>
+<li><p>number_of_samples: Number of samples per reflected signal</p></li>
+<li><p>data: 8 bit binary data array representing sonar echo strength</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.get_device_data">
+<span class="sig-name descname"><span class="pre">get_device_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.get_device_data" title="Link to this definition"></a></dt>
+<dd><p>Get a device_data message from the device.
+Message description:
+This message is used to communicate the current sonar state. If the data field is populated, the other fields indicate the sonar state when the data was captured. The time taken before the response to the command is sent depends on the difference between the last angle scanned and the new angle in the parameters as well as the number of samples and sample interval (range). To allow for the worst case reponse time the command timeout should be set to 4000 msec.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>mode: Operating mode (1 for Ping360)</p></li>
+<li><p>gain_setting: Analog gain setting (0 = low, 1 = normal, 2 = high)</p></li>
+<li><p>angle: Head angle (Units: gradian)</p></li>
+<li><p>transmit_duration: Acoustic transmission duration (1~1000 microseconds) (Units: microsecond)</p></li>
+<li><p>sample_period: Time interval between individual signal intensity samples in 25nsec increments (80 to 40000 == 2 microseconds to 1000 microseconds)</p></li>
+<li><p>transmit_frequency: Acoustic operating frequency. Frequency range is 500kHz to 1000kHz, however it is only practical to use say 650kHz to 850kHz due to the narrow bandwidth of the acoustic receiver. (Units: kHz)</p></li>
+<li><p>number_of_samples: Number of samples per reflected signal</p></li>
+<li><p>data: 8 bit binary data array representing sonar echo strength</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.get_device_information">
+<span class="sig-name descname"><span class="pre">get_device_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.get_device_information" title="Link to this definition"></a></dt>
+<dd><p>Get a device_information message from the device</p>
+<p>Message description:</p>
+<blockquote>
+<div><p>Device information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>device_type: Device type. 0: Unknown; 1: Ping Echosounder; 2: Ping360</p></li>
+<li><p>device_revision: device-specific hardware revision</p></li>
+<li><p>firmware_version_major: Firmware version major number.</p></li>
+<li><p>firmware_version_minor: Firmware version minor number.</p></li>
+<li><p>firmware_version_patch: Firmware version patch number.</p></li>
+<li><p>reserved: reserved</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.get_protocol_version">
+<span class="sig-name descname"><span class="pre">get_protocol_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.get_protocol_version" title="Link to this definition"></a></dt>
+<dd><p>Get a protocol_version message from the device</p>
+<p>Message description:</p>
+<blockquote>
+<div><p>The protocol version</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>version_major: Protocol version major number.</p></li>
+<li><p>version_minor: Protocol version minor number.</p></li>
+<li><p>version_patch: Protocol version patch number.</p></li>
+<li><p>reserved: reserved</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.handle_message">
+<span class="sig-name descname"><span class="pre">handle_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.handle_message" title="Link to this definition"></a></dt>
+<dd><p>Handle an incoming message from the device.
+Extract message fields into self attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> (<a class="reference internal" href="brping.pingmessage.PingMessage.html#brping.pingmessage.PingMessage" title="brping.pingmessage.PingMessage"><em>PingMessage</em></a>) – The PingMessage to handle.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the PingMessage was handled successfully.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.initialize" title="Link to this definition"></a></dt>
+<dd><p>Make sure there is a device on and read some initial data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the device replies with expected data, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.read" title="Link to this definition"></a></dt>
+<dd><p>Consume rx buffer data until a new message is successfully decoded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new PingMessage as soon as a message is parsed, or None if the buffer is empty and no message has been parsed.
+There may be data remaining in the buffer to be parsed, thus requiring subsequent calls to this method.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="brping.pingmessage.PingMessage.html#brping.pingmessage.PingMessage" title="brping.pingmessage.PingMessage">PingMessage</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.read_io">
+<span class="sig-name descname"><span class="pre">read_io</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.read_io" title="Link to this definition"></a></dt>
+<dd><p>Read available data from the io device</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.request">
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.request" title="Link to this definition"></a></dt>
+<dd><p>Request the given message ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m_id</strong> (<em>int</em>) – The message ID to request from the device.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – The time in seconds to wait for the device to send the requested message before timing out. Defaults to 0.5 seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The device reply if it is received within the timeout period, None otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="brping.pingmessage.PingMessage.html#brping.pingmessage.PingMessage" title="brping.pingmessage.PingMessage">PingMessage</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.set_angle">
+<span class="sig-name descname"><span class="pre">set_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.set_angle" title="Link to this definition"></a></dt>
+<dd><p>Set the angle of the transducer.</p>
+<blockquote>
+<div><p>Description: Head angle</p>
+<dl class="field-list simple">
+<dt class="field-odd">param angle<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new value for angle (Units: gradian).</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.set_gain_setting">
+<span class="sig-name descname"><span class="pre">set_gain_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gain_setting</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.set_gain_setting" title="Link to this definition"></a></dt>
+<dd><p>Set the gain_setting of the transducer.</p>
+<blockquote>
+<div><p>Description: Analog gain setting (0 = low, 1 = normal, 2 = high)</p>
+<dl class="field-list simple">
+<dt class="field-odd">param gain_setting<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new value for gain_setting.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.set_mode">
+<span class="sig-name descname"><span class="pre">set_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.set_mode" title="Link to this definition"></a></dt>
+<dd><p>Set the mode of the transducer.</p>
+<blockquote>
+<div><p>Description: Operating mode (1 for Ping360)</p>
+<dl class="field-list simple">
+<dt class="field-odd">param mode<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new value for mode.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.set_number_of_samples">
+<span class="sig-name descname"><span class="pre">set_number_of_samples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_of_samples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.set_number_of_samples" title="Link to this definition"></a></dt>
+<dd><p>Set the number_of_samples of the transducer.</p>
+<blockquote>
+<div><p>Description: Number of samples per reflected signal</p>
+<dl class="field-list simple">
+<dt class="field-odd">param number_of_samples<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new value for number_of_samples.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.set_sample_period">
+<span class="sig-name descname"><span class="pre">set_sample_period</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_period</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.set_sample_period" title="Link to this definition"></a></dt>
+<dd><p>Set the sample_period of the transducer.</p>
+<blockquote>
+<div><p>Description: Time interval between individual signal intensity samples in 25nsec increments (80 to 40000 == 2 microseconds to 1000 microseconds)</p>
+<dl class="field-list simple">
+<dt class="field-odd">param sample_period<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new value for sample_period.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.set_transmit_duration">
+<span class="sig-name descname"><span class="pre">set_transmit_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transmit_duration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.set_transmit_duration" title="Link to this definition"></a></dt>
+<dd><p>Set the transmit_duration of the transducer.</p>
+<blockquote>
+<div><p>Description: Acoustic transmission duration (1~1000 microseconds)</p>
+<dl class="field-list simple">
+<dt class="field-odd">param transmit_duration<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new value for transmit_duration (Units: microsecond).</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.set_transmit_frequency">
+<span class="sig-name descname"><span class="pre">set_transmit_frequency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transmit_frequency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.set_transmit_frequency" title="Link to this definition"></a></dt>
+<dd><p>Set the transmit_frequency of the transducer.</p>
+<blockquote>
+<div><p>Description: Acoustic operating frequency. Frequency range is 500kHz to 1000kHz, however it is only practical to use say 650kHz to 850kHz due to the narrow bandwidth of the acoustic receiver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param transmit_frequency<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new value for transmit_frequency (Units: kHz).</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.wait_message">
+<span class="sig-name descname"><span class="pre">wait_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.wait_message" title="Link to this definition"></a></dt>
+<dd><p>Wait until we receive a message from the device with the desired message_id for timeout seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message_id</strong> (<em>int</em>) – The message id to wait to receive from the device.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – The timeout period in seconds to wait. Defaults to 0.5 seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The message from the device if it is received within the timeout period, None otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="brping.pingmessage.PingMessage.html#brping.pingmessage.PingMessage" title="brping.pingmessage.PingMessage">PingMessage</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping360.Ping360.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping360.Ping360.write" title="Link to this definition"></a></dt>
+<dd><p>Write data to device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>bytearray</em>) – Bytearray to write to the device.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of bytes written.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
