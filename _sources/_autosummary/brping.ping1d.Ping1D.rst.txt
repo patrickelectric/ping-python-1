@@ -1,0 +1,60 @@
+brping.ping1d.Ping1D
+====================
+
+.. currentmodule:: brping.ping1d
+
+.. autoclass:: Ping1D
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Ping1D.__init__
+      ~Ping1D.connect_serial
+      ~Ping1D.connect_udp
+      ~Ping1D.get_device_id
+      ~Ping1D.get_device_information
+      ~Ping1D.get_distance
+      ~Ping1D.get_distance_simple
+      ~Ping1D.get_firmware_version
+      ~Ping1D.get_gain_setting
+      ~Ping1D.get_general_info
+      ~Ping1D.get_mode_auto
+      ~Ping1D.get_pcb_temperature
+      ~Ping1D.get_ping_enable
+      ~Ping1D.get_ping_interval
+      ~Ping1D.get_processor_temperature
+      ~Ping1D.get_profile
+      ~Ping1D.get_protocol_version
+      ~Ping1D.get_range
+      ~Ping1D.get_speed_of_sound
+      ~Ping1D.get_transmit_duration
+      ~Ping1D.get_voltage_5
+      ~Ping1D.handle_message
+      ~Ping1D.initialize
+      ~Ping1D.legacyRequest
+      ~Ping1D.read
+      ~Ping1D.read_io
+      ~Ping1D.request
+      ~Ping1D.set_device_id
+      ~Ping1D.set_gain_setting
+      ~Ping1D.set_mode_auto
+      ~Ping1D.set_ping_enable
+      ~Ping1D.set_ping_interval
+      ~Ping1D.set_range
+      ~Ping1D.set_speed_of_sound
+      ~Ping1D.wait_message
+      ~Ping1D.write
+   
+   
+
+   
+   
+   

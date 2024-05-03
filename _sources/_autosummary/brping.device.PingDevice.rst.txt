@@ -1,0 +1,36 @@
+brping.device.PingDevice
+========================
+
+.. currentmodule:: brping.device
+
+.. autoclass:: PingDevice
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PingDevice.__init__
+      ~PingDevice.connect_serial
+      ~PingDevice.connect_udp
+      ~PingDevice.get_device_information
+      ~PingDevice.get_protocol_version
+      ~PingDevice.handle_message
+      ~PingDevice.initialize
+      ~PingDevice.read
+      ~PingDevice.read_io
+      ~PingDevice.request
+      ~PingDevice.wait_message
+      ~PingDevice.write
+   
+   
+
+   
+   
+   
