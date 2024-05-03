@@ -22,7 +22,6 @@ brping.pingmessage.PingMessage
       ~PingMessage.pack_msg_data
       ~PingMessage.unpack_msg_data
       ~PingMessage.update_checksum
-      ~PingMessage.update_payload_length
       ~PingMessage.verify_checksum
    
    

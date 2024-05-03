@@ -95,37 +95,46 @@
 <dt class="sig sig-object py" id="brping.pingmessage.PingMessage">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brping.pingmessage.</span></span><span class="sig-name descname"><span class="pre">PingMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingMessage" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a message protocol for the Blue Robotics ‘Ping’ devices.</p>
+<p>This class provides methods to pack and unpack message data into/from binary formats, handle checksums,
+and facilitate the communication between client applications and the device.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="brping.pingmessage.PingMessage.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingMessage.__init__" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Initializes a new PingMessage object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg_id</strong> – The message ID for this message.</p></li>
+<li><p><strong>msg_data</strong> – Binary data buffer for unpacking into a message object. If None, an empty message is created.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#brping.pingmessage.PingMessage.__init__" title="brping.pingmessage.PingMessage.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([msg_id, msg_data])</p></td>
-<td><p></p></td>
+<td><p>Initializes a new PingMessage object.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_checksum</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.pingmessage.PingMessage.calculate_checksum" title="brping.pingmessage.PingMessage.calculate_checksum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_checksum</span></code></a>()</p></td>
+<td><p>Calculates the checksum for the current message data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_payload_format</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.pingmessage.PingMessage.get_payload_format" title="brping.pingmessage.PingMessage.get_payload_format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_payload_format</span></code></a>()</p></td>
+<td><p>Retrieves the struct formatting string for the message payload based on the message ID and dynamic content.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pack_msg_data</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.pingmessage.PingMessage.pack_msg_data" title="brping.pingmessage.PingMessage.pack_msg_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pack_msg_data</span></code></a>()</p></td>
+<td><p>Packs object attributes into self.msg_data as a bytearray.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unpack_msg_data</span></code>(msg_data)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.pingmessage.PingMessage.unpack_msg_data" title="brping.pingmessage.PingMessage.unpack_msg_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unpack_msg_data</span></code></a>(msg_data)</p></td>
+<td><p>Unpacks a bytearray into object attributes.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_checksum</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.pingmessage.PingMessage.update_checksum" title="brping.pingmessage.PingMessage.update_checksum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_checksum</span></code></a>()</p></td>
+<td><p>Updates the checksum value of the object based on its message data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_payload_length</span></code>()</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">verify_checksum</span></code>()</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.pingmessage.PingMessage.verify_checksum" title="brping.pingmessage.PingMessage.verify_checksum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">verify_checksum</span></code></a>()</p></td>
+<td><p>Verifies that the object's checksum attribute matches the checksum calculated from its message data.</p></td>
 </tr>
 </tbody>
 </table>
@@ -158,6 +167,75 @@
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.pingmessage.PingMessage.calculate_checksum">
+<span class="sig-name descname"><span class="pre">calculate_checksum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingMessage.calculate_checksum" title="Link to this definition"></a></dt>
+<dd><p>Calculates the checksum for the current message data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Calculated checksum value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.pingmessage.PingMessage.get_payload_format">
+<span class="sig-name descname"><span class="pre">get_payload_format</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingMessage.get_payload_format" title="Link to this definition"></a></dt>
+<dd><p>Retrieves the struct formatting string for the message payload based on the message ID and dynamic content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Struct format string for the payload.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.pingmessage.PingMessage.pack_msg_data">
+<span class="sig-name descname"><span class="pre">pack_msg_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingMessage.pack_msg_data" title="Link to this definition"></a></dt>
+<dd><p>Packs object attributes into self.msg_data as a bytearray.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The packed message data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.pingmessage.PingMessage.unpack_msg_data">
+<span class="sig-name descname"><span class="pre">unpack_msg_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingMessage.unpack_msg_data" title="Link to this definition"></a></dt>
+<dd><p>Unpacks a bytearray into object attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg_data</strong> – The binary data to unpack.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.pingmessage.PingMessage.update_checksum">
+<span class="sig-name descname"><span class="pre">update_checksum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingMessage.update_checksum" title="Link to this definition"></a></dt>
+<dd><p>Updates the checksum value of the object based on its message data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Updated checksum value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.pingmessage.PingMessage.verify_checksum">
+<span class="sig-name descname"><span class="pre">verify_checksum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingMessage.verify_checksum" title="Link to this definition"></a></dt>
+<dd><p>Verifies that the object’s checksum attribute matches the checksum calculated from its message data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if checksums match, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>

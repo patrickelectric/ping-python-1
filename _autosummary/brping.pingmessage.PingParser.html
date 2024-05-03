@@ -105,8 +105,8 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#brping.pingmessage.PingParser.__init__" title="brping.pingmessage.PingParser.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#brping.pingmessage.PingParser.parse_byte" title="brping.pingmessage.PingParser.parse_byte"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_byte</span></code></a>(msg_byte)</p></td>
-<td><p>Returns the current parse state after feeding the parser a single byte.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_byte</span></code>(msg_byte)</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">wait_checksum_h</span></code>(msg_byte)</p></td>
 <td><p></p></td>
@@ -208,20 +208,6 @@
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt class="sig sig-object py" id="brping.pingmessage.PingParser.parse_byte">
-<span class="sig-name descname"><span class="pre">parse_byte</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg_byte</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.pingmessage.PingParser.parse_byte" title="Link to this definition"></a></dt>
-<dd><p>Returns the current parse state after feeding the parser a single byte.</p>
-<dl>
-<dt>‘msg_byte’ is the byte to parse.</dt><dd><p>If it completes a valid message, returns PingParser.NEW_MESSAGE.
-The decoded PingMessage will be available in the self.rx_msg attribute</p>
-<blockquote>
-<div><p>until a new message is decoded.</p>
-</div></blockquote>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </section>
