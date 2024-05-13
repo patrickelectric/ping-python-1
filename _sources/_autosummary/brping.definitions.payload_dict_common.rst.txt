@@ -1,6 +1,0 @@
-brping.definitions.payload\_dict\_common
-========================================
-
-.. currentmodule:: brping.definitions
-
-.. autodata:: payload_dict_common

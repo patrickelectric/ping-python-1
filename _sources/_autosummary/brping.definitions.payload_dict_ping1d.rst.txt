@@ -1,6 +1,0 @@
-brping.definitions.payload\_dict\_ping1d
-========================================
-
-.. currentmodule:: brping.definitions
-
-.. autodata:: payload_dict_ping1d
