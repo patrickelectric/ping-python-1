@@ -1,0 +1,62 @@
+brping.pingmessage.PingParser
+=============================
+
+.. currentmodule:: brping.pingmessage
+
+.. autoclass:: PingParser
+   :members:
+   :show-inheritance:
+   :inherited-members:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PingParser.__init__
+      ~PingParser.parse_byte
+      ~PingParser.wait_checksum_h
+      ~PingParser.wait_checksum_l
+      ~PingParser.wait_dst_id
+      ~PingParser.wait_header
+      ~PingParser.wait_length_h
+      ~PingParser.wait_length_l
+      ~PingParser.wait_msg_id_h
+      ~PingParser.wait_msg_id_l
+      ~PingParser.wait_payload
+      ~PingParser.wait_src_id
+      ~PingParser.wait_start
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PingParser.buf
+      ~PingParser.state
+      ~PingParser.payload_length
+      ~PingParser.message_id
+      ~PingParser.errors
+      ~PingParser.parsed
+      ~PingParser.rx_msg
+      ~PingParser.ERROR
+      ~PingParser.NEW_MESSAGE
+      ~PingParser.WAIT_CHECKSUM_H
+      ~PingParser.WAIT_CHECKSUM_L
+      ~PingParser.WAIT_DST_ID
+      ~PingParser.WAIT_HEADER
+      ~PingParser.WAIT_LENGTH_H
+      ~PingParser.WAIT_LENGTH_L
+      ~PingParser.WAIT_MSG_ID_H
+      ~PingParser.WAIT_MSG_ID_L
+      ~PingParser.WAIT_PAYLOAD
+      ~PingParser.WAIT_SRC_ID
+      ~PingParser.WAIT_START
+   
+   

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>brping.ping1d.Ping1D &mdash; ping-python  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="brping.ping360" href="brping.ping360.html" />
+    <link rel="prev" title="brping.ping1d" href="brping.ping1d.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ping-python
+              <img src="../_static/ping.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="brping.html">brping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="brping.definitions.html">brping.definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brping.device.html">brping.device</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="brping.ping1d.html">brping.ping1d</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">brping.ping1d.Ping1D</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#brping.ping1d.Ping1D"><code class="docutils literal notranslate"><span class="pre">Ping1D</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="brping.ping360.html">brping.ping360</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brping.pingmessage.html">brping.pingmessage</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ping-python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="brping.html">brping</a></li>
+          <li class="breadcrumb-item"><a href="brping.ping1d.html">brping.ping1d</a></li>
+      <li class="breadcrumb-item active">brping.ping1d.Ping1D</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/brping.ping1d.Ping1D.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="brping-ping1d-ping1d">
+<h1>brping.ping1d.Ping1D<a class="headerlink" href="#brping-ping1d-ping1d" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">brping.ping1d.</span></span><span class="sig-name descname"><span class="pre">Ping1D</span></span><a class="headerlink" href="#brping.ping1d.Ping1D" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="brping.device.PingDevice.html#brping.device.PingDevice" title="brping.device.PingDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">PingDevice</span></code></a></p>
+<p>Represents a Ping1D Echosounder from Blue Robotics.</p>
+<p>This class provides methods to control and retrieve data from the Ping1D echosounder,
+which includes functionality to measure distances and read from underwater environments.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.__init__" title="brping.ping1d.Ping1D.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.connect_serial" title="brping.ping1d.Ping1D.connect_serial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_serial</span></code></a>(device_name[, baudrate])</p></td>
+<td><p>Do the connection via an serial link</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.connect_udp" title="brping.ping1d.Ping1D.connect_udp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_udp</span></code></a>([host, port])</p></td>
+<td><p>Do the connection via an UDP link.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_device_id" title="brping.ping1d.Ping1D.get_device_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_device_id</span></code></a>()</p></td>
+<td><p>Get a device_id message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_device_information" title="brping.ping1d.Ping1D.get_device_information"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_device_information</span></code></a>()</p></td>
+<td><p>Get a device_information message from the device</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_distance" title="brping.ping1d.Ping1D.get_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_distance</span></code></a>()</p></td>
+<td><p>Get a distance message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_distance_simple" title="brping.ping1d.Ping1D.get_distance_simple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_distance_simple</span></code></a>()</p></td>
+<td><p>Get a distance_simple message from the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_firmware_version" title="brping.ping1d.Ping1D.get_firmware_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_firmware_version</span></code></a>()</p></td>
+<td><p>Get a firmware_version message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_gain_setting" title="brping.ping1d.Ping1D.get_gain_setting"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_gain_setting</span></code></a>()</p></td>
+<td><p>Get a gain_setting message from the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_general_info" title="brping.ping1d.Ping1D.get_general_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_general_info</span></code></a>()</p></td>
+<td><p>Get a general_info message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_mode_auto" title="brping.ping1d.Ping1D.get_mode_auto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mode_auto</span></code></a>()</p></td>
+<td><p>Get a mode_auto message from the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_pcb_temperature" title="brping.ping1d.Ping1D.get_pcb_temperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pcb_temperature</span></code></a>()</p></td>
+<td><p>Get a pcb_temperature message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_ping_enable" title="brping.ping1d.Ping1D.get_ping_enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ping_enable</span></code></a>()</p></td>
+<td><p>Get a ping_enable message from the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_ping_interval" title="brping.ping1d.Ping1D.get_ping_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ping_interval</span></code></a>()</p></td>
+<td><p>Get a ping_interval message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_processor_temperature" title="brping.ping1d.Ping1D.get_processor_temperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_processor_temperature</span></code></a>()</p></td>
+<td><p>Get a processor_temperature message from the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_profile" title="brping.ping1d.Ping1D.get_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_profile</span></code></a>()</p></td>
+<td><p>Get a profile message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_protocol_version" title="brping.ping1d.Ping1D.get_protocol_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_protocol_version</span></code></a>()</p></td>
+<td><p>Get a protocol_version message from the device</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_range" title="brping.ping1d.Ping1D.get_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_range</span></code></a>()</p></td>
+<td><p>Get a range message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_speed_of_sound" title="brping.ping1d.Ping1D.get_speed_of_sound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_speed_of_sound</span></code></a>()</p></td>
+<td><p>Get a speed_of_sound message from the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_transmit_duration" title="brping.ping1d.Ping1D.get_transmit_duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_transmit_duration</span></code></a>()</p></td>
+<td><p>Get a transmit_duration message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.get_voltage_5" title="brping.ping1d.Ping1D.get_voltage_5"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_voltage_5</span></code></a>()</p></td>
+<td><p>Get a voltage_5 message from the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.handle_message" title="brping.ping1d.Ping1D.handle_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_message</span></code></a>(msg)</p></td>
+<td><p>Handle an incoming message from the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.initialize" title="brping.ping1d.Ping1D.initialize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize</span></code></a>()</p></td>
+<td><p>Make sure there is a device on and read some initial data.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">legacyRequest</span></code>(m_id[, timeout])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.read" title="brping.ping1d.Ping1D.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>()</p></td>
+<td><p>Consume rx buffer data until a new message is successfully decoded.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.read_io" title="brping.ping1d.Ping1D.read_io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_io</span></code></a>()</p></td>
+<td><p>Read available data from the io device</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.request" title="brping.ping1d.Ping1D.request"><code class="xref py py-obj docutils literal notranslate"><span class="pre">request</span></code></a>(m_id[, timeout])</p></td>
+<td><p>Request the given message ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.set_device_id" title="brping.ping1d.Ping1D.set_device_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_device_id</span></code></a>(device_id[, verify])</p></td>
+<td><p>Send a set_device_id message to the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.set_gain_setting" title="brping.ping1d.Ping1D.set_gain_setting"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_gain_setting</span></code></a>(gain_setting[, verify])</p></td>
+<td><p>Send a set_gain_setting message to the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.set_mode_auto" title="brping.ping1d.Ping1D.set_mode_auto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mode_auto</span></code></a>(mode_auto[, verify])</p></td>
+<td><p>Send a set_mode_auto message to the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.set_ping_enable" title="brping.ping1d.Ping1D.set_ping_enable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_ping_enable</span></code></a>(ping_enabled[, verify])</p></td>
+<td><p>Send a set_ping_enable message to the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.set_ping_interval" title="brping.ping1d.Ping1D.set_ping_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_ping_interval</span></code></a>(ping_interval[, verify])</p></td>
+<td><p>Send a set_ping_interval message to the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.set_range" title="brping.ping1d.Ping1D.set_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_range</span></code></a>(scan_start, scan_length[, verify])</p></td>
+<td><p>Send a set_range message to the device.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.set_speed_of_sound" title="brping.ping1d.Ping1D.set_speed_of_sound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_speed_of_sound</span></code></a>(speed_of_sound[, verify])</p></td>
+<td><p>Send a set_speed_of_sound message to the device.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.wait_message" title="brping.ping1d.Ping1D.wait_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wait_message</span></code></a>(message_id[, timeout])</p></td>
+<td><p>Wait until we receive a message from the device with the desired message_id for timeout seconds.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#brping.ping1d.Ping1D.write" title="brping.ping1d.Ping1D.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(data)</p></td>
+<td><p>Write data to device.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.connect_serial">
+<span class="sig-name descname"><span class="pre">connect_serial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">115200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.connect_serial" title="Link to this definition"></a></dt>
+<dd><p>Do the connection via an serial link</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device_name</strong> (<em>str</em>) – Serial device name. E.g: /dev/ttyUSB0 or COM5</p></li>
+<li><p><strong>baudrate</strong> (<em>int</em>) – Connection baudrate used in the serial communication, defaults to 115200</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – Failed to open the given serial port</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.connect_udp">
+<span class="sig-name descname"><span class="pre">connect_udp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">12345</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.connect_udp" title="Link to this definition"></a></dt>
+<dd><p>Do the connection via an UDP link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – UDP server address (IPv4) or name. Defaults to None.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – Port used to connect with the server. Defaults to 12345.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_device_id">
+<span class="sig-name descname"><span class="pre">get_device_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_device_id" title="Link to this definition"></a></dt>
+<dd><p>Get a device_id message from the device.</p>
+<p>Message description: The device ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>device_id: The device ID (0-254). 255 is reserved for broadcast messages.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_device_information">
+<span class="sig-name descname"><span class="pre">get_device_information</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_device_information" title="Link to this definition"></a></dt>
+<dd><p>Get a device_information message from the device</p>
+<p>Message description:</p>
+<blockquote>
+<div><p>Device information</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>device_type: Device type. 0: Unknown; 1: Ping Echosounder; 2: Ping360</p></li>
+<li><p>device_revision: device-specific hardware revision</p></li>
+<li><p>firmware_version_major: Firmware version major number.</p></li>
+<li><p>firmware_version_minor: Firmware version minor number.</p></li>
+<li><p>firmware_version_patch: Firmware version patch number.</p></li>
+<li><p>reserved: reserved</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_distance">
+<span class="sig-name descname"><span class="pre">get_distance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_distance" title="Link to this definition"></a></dt>
+<dd><p>Get a distance message from the device.</p>
+<p>Message description: The distance to target with confidence estimate. Relevant device parameters during the measurement are also provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>distance: The current return distance determined for the most recent acoustic measurement. (Units: mm)</p></li>
+<li><p>confidence: Confidence in the most recent range measurement. (Units: %)</p></li>
+<li><p>transmit_duration: The acoustic pulse length during acoustic transmission/activation. (Units: us)</p></li>
+<li><p>ping_number: The pulse/measurement count since boot.</p></li>
+<li><p>scan_start: The beginning of the scan region in mm from the transducer. (Units: mm)</p></li>
+<li><p>scan_length: The length of the scan region. (Units: mm)</p></li>
+<li><p>gain_setting: The current gain setting. 0: 0.6, 1: 1.8, 2: 5.5, 3: 12.9, 4: 30.2, 5: 66.1, 6: 144</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_distance_simple">
+<span class="sig-name descname"><span class="pre">get_distance_simple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_distance_simple" title="Link to this definition"></a></dt>
+<dd><p>Get a distance_simple message from the device.</p>
+<p>Message description: The distance to target with confidence estimate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>distance: Distance to the target. (Units: mm)</p></li>
+<li><p>confidence: Confidence in the distance measurement. (Units: %)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_firmware_version">
+<span class="sig-name descname"><span class="pre">get_firmware_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_firmware_version" title="Link to this definition"></a></dt>
+<dd><p>Get a firmware_version message from the device.</p>
+<p>Message description: Device information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>device_type: Device type. 0: Unknown; 1: Echosounder</p></li>
+<li><p>device_model: Device model. 0: Unknown; 1: Ping1D</p></li>
+<li><p>firmware_version_major: Firmware version major number.</p></li>
+<li><p>firmware_version_minor: Firmware version minor number.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_gain_setting">
+<span class="sig-name descname"><span class="pre">get_gain_setting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_gain_setting" title="Link to this definition"></a></dt>
+<dd><p>Get a gain_setting message from the device.</p>
+<p>Message description: The current gain setting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>gain_setting: The current gain setting. 0: 0.6, 1: 1.8, 2: 5.5, 3: 12.9, 4: 30.2, 5: 66.1, 6: 144</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_general_info">
+<span class="sig-name descname"><span class="pre">get_general_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_general_info" title="Link to this definition"></a></dt>
+<dd><p>Get a general_info message from the device.</p>
+<p>Message description: General information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>firmware_version_major: Firmware major version.</p></li>
+<li><p>firmware_version_minor: Firmware minor version.</p></li>
+<li><p>voltage_5: Device supply voltage. (Units: mV)</p></li>
+<li><p>ping_interval: The interval between acoustic measurements. (Units: ms)</p></li>
+<li><p>gain_setting: The current gain setting. 0: 0.6, 1: 1.8, 2: 5.5, 3: 12.9, 4: 30.2, 5: 66.1, 6: 144</p></li>
+<li><p>mode_auto: The current operating mode of the device. 0: manual mode, 1: auto mode</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_mode_auto">
+<span class="sig-name descname"><span class="pre">get_mode_auto</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_mode_auto" title="Link to this definition"></a></dt>
+<dd><p>Get a mode_auto message from the device.</p>
+<p>Message description: The current operating mode of the device. Manual mode allows for manual selection of the gain and scan range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>mode_auto: 0: manual mode, 1: auto mode</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_pcb_temperature">
+<span class="sig-name descname"><span class="pre">get_pcb_temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_pcb_temperature" title="Link to this definition"></a></dt>
+<dd><p>Get a pcb_temperature message from the device.</p>
+<p>Message description: Temperature of the on-board thermistor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>pcb_temperature: The temperature in centi-degrees Centigrade (100 * degrees C). (Units: cC)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_ping_enable">
+<span class="sig-name descname"><span class="pre">get_ping_enable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_ping_enable" title="Link to this definition"></a></dt>
+<dd><p>Get a ping_enable message from the device.</p>
+<p>Message description: Acoustic output enabled state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>ping_enabled: The state of the acoustic output. 0: disabled, 1:enabled</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_ping_interval">
+<span class="sig-name descname"><span class="pre">get_ping_interval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_ping_interval" title="Link to this definition"></a></dt>
+<dd><p>Get a ping_interval message from the device.</p>
+<p>Message description: The interval between acoustic measurements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>ping_interval: The minimum interval between acoustic measurements. The actual interval may be longer. (Units: ms)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_processor_temperature">
+<span class="sig-name descname"><span class="pre">get_processor_temperature</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_processor_temperature" title="Link to this definition"></a></dt>
+<dd><p>Get a processor_temperature message from the device.</p>
+<p>Message description: Temperature of the device cpu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>processor_temperature: The temperature in centi-degrees Centigrade (100 * degrees C). (Units: cC)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_profile">
+<span class="sig-name descname"><span class="pre">get_profile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_profile" title="Link to this definition"></a></dt>
+<dd><p>Get a profile message from the device.</p>
+<p>Message description: A profile produced from a single acoustic measurement. The data returned is an array of response strength at even intervals across the scan region. The scan region is defined as the region between &lt;scan_start&gt; and &lt;scan_start + scan_length&gt; millimeters away from the transducer. A distance measurement to the target is also provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>distance: The current return distance determined for the most recent acoustic measurement. (Units: mm)</p></li>
+<li><p>confidence: Confidence in the most recent range measurement. (Units: %)</p></li>
+<li><p>transmit_duration: The acoustic pulse length during acoustic transmission/activation. (Units: us)</p></li>
+<li><p>ping_number: The pulse/measurement count since boot.</p></li>
+<li><p>scan_start: The beginning of the scan region in mm from the transducer. (Units: mm)</p></li>
+<li><p>scan_length: The length of the scan region. (Units: mm)</p></li>
+<li><p>gain_setting: The current gain setting. 0: 0.6, 1: 1.8, 2: 5.5, 3: 12.9, 4: 30.2, 5: 66.1, 6: 144</p></li>
+<li><p>profile_data: An array of return strength measurements taken at regular intervals across the scan region.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_protocol_version">
+<span class="sig-name descname"><span class="pre">get_protocol_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_protocol_version" title="Link to this definition"></a></dt>
+<dd><p>Get a protocol_version message from the device</p>
+<p>Message description:</p>
+<blockquote>
+<div><p>The protocol version</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>version_major: Protocol version major number.</p></li>
+<li><p>version_minor: Protocol version minor number.</p></li>
+<li><p>version_patch: Protocol version patch number.</p></li>
+<li><p>reserved: reserved</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_range">
+<span class="sig-name descname"><span class="pre">get_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_range" title="Link to this definition"></a></dt>
+<dd><p>Get a range message from the device.</p>
+<p>Message description: The scan range for acoustic measurements. Measurements returned by the device will lie in the range (scan_start, scan_start + scan_length).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>scan_start: The beginning of the scan range in mm from the transducer. (Units: mm)</p></li>
+<li><p>scan_length: The length of the scan range. (Units: mm)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_speed_of_sound">
+<span class="sig-name descname"><span class="pre">get_speed_of_sound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_speed_of_sound" title="Link to this definition"></a></dt>
+<dd><p>Get a speed_of_sound message from the device.</p>
+<p>Message description: The speed of sound used for distance calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>speed_of_sound: The speed of sound in the measurement medium. ~1,500,000 mm/s for water. (Units: mm/s)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_transmit_duration">
+<span class="sig-name descname"><span class="pre">get_transmit_duration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_transmit_duration" title="Link to this definition"></a></dt>
+<dd><p>Get a transmit_duration message from the device.</p>
+<p>Message description: The duration of the acoustic activation/transmission.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>transmit_duration: Acoustic pulse duration. (Units: microseconds)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.get_voltage_5">
+<span class="sig-name descname"><span class="pre">get_voltage_5</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.get_voltage_5" title="Link to this definition"></a></dt>
+<dd><p>Get a voltage_5 message from the device.</p>
+<p>Message description: The 5V rail voltage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>None if there is no reply from the device, otherwise a dictionary with the following keys:</p>
+<ul class="simple">
+<li><p>voltage_5: The 5V rail voltage. (Units: mV)</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.handle_message">
+<span class="sig-name descname"><span class="pre">handle_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.handle_message" title="Link to this definition"></a></dt>
+<dd><p>Handle an incoming message from the device.
+Extract message fields into self attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>msg</strong> (<a class="reference internal" href="brping.pingmessage.PingMessage.html#brping.pingmessage.PingMessage" title="brping.pingmessage.PingMessage"><em>PingMessage</em></a>) – The PingMessage to handle.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the PingMessage was handled successfully.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.initialize" title="Link to this definition"></a></dt>
+<dd><p>Make sure there is a device on and read some initial data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the device replies with expected data, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.read" title="Link to this definition"></a></dt>
+<dd><p>Consume rx buffer data until a new message is successfully decoded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A new PingMessage as soon as a message is parsed, or None if the buffer is empty and no message has been parsed.
+There may be data remaining in the buffer to be parsed, thus requiring subsequent calls to this method.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="brping.pingmessage.PingMessage.html#brping.pingmessage.PingMessage" title="brping.pingmessage.PingMessage">PingMessage</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.read_io">
+<span class="sig-name descname"><span class="pre">read_io</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.read_io" title="Link to this definition"></a></dt>
+<dd><p>Read available data from the io device</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.request">
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.request" title="Link to this definition"></a></dt>
+<dd><p>Request the given message ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m_id</strong> (<em>int</em>) – The message ID to request from the device.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – The time in seconds to wait for the device to send the requested message before timing out. Defaults to 0.5 seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The device reply if it is received within the timeout period, None otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="brping.pingmessage.PingMessage.html#brping.pingmessage.PingMessage" title="brping.pingmessage.PingMessage">PingMessage</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.set_device_id">
+<span class="sig-name descname"><span class="pre">set_device_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.set_device_id" title="Link to this definition"></a></dt>
+<dd><p>Send a set_device_id message to the device.</p>
+<p>Message description: Set the device ID.</p>
+<p>Send the message to write the device parameters, then read the values back from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device_id</strong> (<em>type</em>) – Device ID (0-254). 255 is reserved for broadcast messages.</p></li>
+<li><p><strong>verify</strong> (<em>bool</em>) – Specify whether to verify the new parameters by reading them back from the device. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful communication with the device (and verification if verify is True), False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.set_gain_setting">
+<span class="sig-name descname"><span class="pre">set_gain_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gain_setting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.set_gain_setting" title="Link to this definition"></a></dt>
+<dd><p>Send a set_gain_setting message to the device.</p>
+<p>Message description: Set the current gain setting.</p>
+<p>Send the message to write the device parameters, then read the values back from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gain_setting</strong> (<em>type</em>) – The current gain setting. 0: 0.6, 1: 1.8, 2: 5.5, 3: 12.9, 4: 30.2, 5: 66.1, 6: 144</p></li>
+<li><p><strong>verify</strong> (<em>bool</em>) – Specify whether to verify the new parameters by reading them back from the device. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful communication with the device (and verification if verify is True), False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.set_mode_auto">
+<span class="sig-name descname"><span class="pre">set_mode_auto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode_auto</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.set_mode_auto" title="Link to this definition"></a></dt>
+<dd><p>Send a set_mode_auto message to the device.</p>
+<p>Message description: Set automatic or manual mode. Manual mode allows for manual selection of the gain and scan range.</p>
+<p>Send the message to write the device parameters, then read the values back from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode_auto</strong> (<em>type</em>) – 0: manual mode. 1: auto mode.</p></li>
+<li><p><strong>verify</strong> (<em>bool</em>) – Specify whether to verify the new parameters by reading them back from the device. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful communication with the device (and verification if verify is True), False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.set_ping_enable">
+<span class="sig-name descname"><span class="pre">set_ping_enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ping_enabled</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.set_ping_enable" title="Link to this definition"></a></dt>
+<dd><p>Send a set_ping_enable message to the device.</p>
+<p>Message description: Enable or disable acoustic measurements.</p>
+<p>Send the message to write the device parameters, then read the values back from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ping_enabled</strong> (<em>type</em>) – 0: Disable, 1: Enable.</p></li>
+<li><p><strong>verify</strong> (<em>bool</em>) – Specify whether to verify the new parameters by reading them back from the device. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful communication with the device (and verification if verify is True), False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.set_ping_interval">
+<span class="sig-name descname"><span class="pre">set_ping_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ping_interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.set_ping_interval" title="Link to this definition"></a></dt>
+<dd><p>Send a set_ping_interval message to the device.</p>
+<p>Message description: The interval between acoustic measurements.</p>
+<p>Send the message to write the device parameters, then read the values back from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ping_interval</strong> (<em>type</em>) – The interval between acoustic measurements. (Units: ms)</p></li>
+<li><p><strong>verify</strong> (<em>bool</em>) – Specify whether to verify the new parameters by reading them back from the device. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful communication with the device (and verification if verify is True), False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.set_range">
+<span class="sig-name descname"><span class="pre">set_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scan_start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.set_range" title="Link to this definition"></a></dt>
+<dd><p>Send a set_range message to the device.</p>
+<p>Message description: Set the scan range for acoustic measurements.</p>
+<p>Send the message to write the device parameters, then read the values back from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scan_start</strong> (<em>type</em>) – (Units: mm)</p></li>
+<li><p><strong>scan_length</strong> (<em>type</em>) – The length of the scan range. (Units: mm)</p></li>
+<li><p><strong>verify</strong> (<em>bool</em>) – Specify whether to verify the new parameters by reading them back from the device. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful communication with the device (and verification if verify is True), False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.set_speed_of_sound">
+<span class="sig-name descname"><span class="pre">set_speed_of_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">speed_of_sound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.set_speed_of_sound" title="Link to this definition"></a></dt>
+<dd><p>Send a set_speed_of_sound message to the device.</p>
+<p>Message description: Set the speed of sound used for distance calculations.</p>
+<p>Send the message to write the device parameters, then read the values back from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>speed_of_sound</strong> (<em>type</em>) – The speed of sound in the measurement medium. ~1,500,000 mm/s for water. (Units: mm/s)</p></li>
+<li><p><strong>verify</strong> (<em>bool</em>) – Specify whether to verify the new parameters by reading them back from the device. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful communication with the device (and verification if verify is True), False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.wait_message">
+<span class="sig-name descname"><span class="pre">wait_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.wait_message" title="Link to this definition"></a></dt>
+<dd><p>Wait until we receive a message from the device with the desired message_id for timeout seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message_id</strong> (<em>int</em>) – The message id to wait to receive from the device.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – The timeout period in seconds to wait. Defaults to 0.5 seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The message from the device if it is received within the timeout period, None otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="brping.pingmessage.PingMessage.html#brping.pingmessage.PingMessage" title="brping.pingmessage.PingMessage">PingMessage</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="brping.ping1d.Ping1D.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#brping.ping1d.Ping1D.write" title="Link to this definition"></a></dt>
+<dd><p>Write data to device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>bytearray</em>) – Bytearray to write to the device.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of bytes written.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="brping.ping1d.html" class="btn btn-neutral float-left" title="brping.ping1d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="brping.ping360.html" class="btn btn-neutral float-right" title="brping.ping360" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Blue Robotics.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

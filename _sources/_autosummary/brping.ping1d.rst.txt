@@ -1,0 +1,31 @@
+brping.ping1d
+=============
+
+.. automodule:: brping.ping1d
+  
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Ping1D
+   
+   
+
+   
+   
+   
+
+
+
